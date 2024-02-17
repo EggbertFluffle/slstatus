@@ -202,6 +202,7 @@
 			close(afd);
 			return NULL;
 		}
+
 		for (i = 0; i < LEN(vnames); i++) {
 			if (devmask & (1 << i) && !strcmp("vol", vnames[i])) {
 				if (ioctl(afd, MIXER_READ(i), &v) < 0) {

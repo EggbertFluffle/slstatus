@@ -7,7 +7,9 @@ include config.mk
 REQ = util
 COM =\
 	components/alsa_master_vol\
+	components/pipewire_master_vol\
 	components/battery\
+	components/base_component\
 	components/cat\
 	components/cpu\
 	components/datetime\
@@ -28,7 +30,8 @@ COM =\
 	components/uptime\
 	components/user\
 	components/volume\
-	components/wifi
+	components/wifi\
+	components/bluetooth
 
 all: slstatus
 

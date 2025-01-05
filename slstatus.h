@@ -15,6 +15,9 @@ const char *cpu_perc(const char *unused);
 /* datetime */
 const char *datetime(const char *fmt);
 
+/* base_component */
+const char *base_component(const char *fmt);
+
 /* disk */
 const char *disk_free(const char *path);
 const char *disk_perc(const char *path);
@@ -79,7 +82,11 @@ const char *username(const char *unused);
 /* volume */
 const char *vol_perc(const char *card);
 const char *alsa_master_vol(void);
+const char *pipewire_master_vol(void);
 
 /* wifi */
 const char *wifi_essid(const char *interface);
 const char *wifi_perc(const char *interface);
+
+/* bluetooth */
+const char *bluetooth(void);

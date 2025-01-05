@@ -1,6 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 #include "../slstatus.h"
 #include "../util.h"
@@ -45,6 +46,10 @@
 			return NULL;
 		if (pscanf(path, "%d", &cap_perc) != 1)
 			return NULL;
+
+		if(cap_perc == 15 || cap_perc < 6) {
+			system("notify-send 'LOW BATTERY'");
+		}
 
 		return bprintf("%d", cap_perc);
 	}

@@ -59,6 +59,7 @@ static const char unknown_str[] = "n/a";
  * uptime              system uptime                   NULL
  * username            username of current user        NULL
  * alsa_master_vol     ALSA Master device volume       NULL
+ * bluetooth           bluetooth on/off/connected      NULL
  * vol_perc            OSS/ALSA volume in percent      mixer file (/dev/mixer)
  *                                                     NULL on OpenBSD/FreeBSD
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
@@ -66,9 +67,10 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ cpu_perc, "^c#83a598^[CPU: %s%]",     NULL    },
-	{ ram_perc, "^c#fb4934^[RAM: %s%]",     NULL    },
-	{ wifi_perc, "^c#fabd2f^[WIFI: %s%]",   "wlp3s0"},
-	{ alsa_master_vol, "^c#b8bb26^[VOL: %s]", NULL  },
-	{ datetime, "^c#ebdbb2^[%s]",           "%F %T" },
+	// { wifi_perc, "^c#fb4934^[WIFI:  %s%]  ", "wlp0s20f3"},
+	{ wifi_essid, "^c#fb4934^[WIFI:  %s]  ", "wlp0s20f3"},
+	{ battery_state, "^c#fabd2f^[BAT:  %s", "BAT0"},
+	{ battery_perc, "^c#fabd2f^%s%]  ", "BAT0"},
+	{ pipewire_master_vol, "^c#b8bb26^[VOL:  %s]  ", NULL},
+	{ datetime, "^c#ebdbb2^[%s]", "%m-%d  %I:%M:%S  %p"},
 };
